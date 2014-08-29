@@ -4,6 +4,11 @@ class PartyController < ApplicationController
   end
 
   def view
-    @cheerups_array = PartyPlanner.new(params[:reason_ids]).invite_cheerups
+    # @cheerups_array = PartyPlanner.new(params[:reason_ids]).invite_cheerups
+
+    respond_to do |format|
+        format.json { render json: {:cheerups_response => PartyPlanner.new(params[:reason_ids]).invite_cheerups} }
+    end
+
   end
 end

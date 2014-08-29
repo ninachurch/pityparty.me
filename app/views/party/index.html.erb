@@ -1,10 +1,13 @@
-<h1> FUQQQ ITTT</h1>
-
-<%= form_tag(view_path, :method => "post") do %>
-<ul style="list-style-type:none;">
-<% @reasons.each do |t| %>
-    <li> <%= check_box_tag  "reason_ids[]",t.id %> <%= t.name %>  </li>
-<%end%>
-</ul>
-<%= submit_tag("Pity Party Begin") %>
-<%end %>
+<div class="container">
+  <div class="request-container">
+    <h1> FUQQQ ITTT</h1>
+    <%= form_tag(view_path, :method => "post"), :remote => true do %>
+    <ul style="list-style-type:none;">
+    <% @reasons.each do |t| %>
+        <li> <%= check_box_tag  "reason_ids[]",t.id %> <%= t.name %>  </li>
+    <%end%>
+    </ul>
+    <%= submit_tag("Pity Party Begin") %>
+    <%end %>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'party#index'
-  post 'party' => 'party#view', as: :view
+  post 'party/reasons' => 'party#reasons', as: :reasons
+  get 'party' => 'party#view', as: :view
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

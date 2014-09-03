@@ -1,23 +1,21 @@
-$(document).ready( function(event, data) {
+$(function(){
+  console.log('beeee happyyyy')
+});
 
-  var doShit = function(event, data) {
-    $.rails.ajax
-    var partyToAppend = renderTemplate(data.cheerups_response)
-    console.log(data.cheerups_response)
-    $(".request-container").append(partyToAppend)
+var ReasonsView = new Backbone.View.extend({
+  tagName: "reasons-checkbox-template",
+
+  homeTpl: _.homepage("here we go"),
+
+  events: {
+    "reasons-checkbox-template":'test'
+  },
+
+  render: function(){
+    this.$el.html(this.homeTpl());
+    return this;
   }
-
-  $("form").on('ajax:success', doShit)
 })
 
-
-////////////VIEW/////////////////
-
-var renderTemplate = function(visualArray){
-  var appendedParty = "";
-  var visuals = visualArray
-  for (var index = 0; index < visuals.length; index++){
-    appendedParty += '<img src=' + visuals[index] + '/>';
-  }
-  return appendedParty
-};
+var reasonsView = new ReasonsView();
+console.log(reasonsView.el);

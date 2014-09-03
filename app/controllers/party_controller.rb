@@ -7,7 +7,7 @@ class PartyController < ApplicationController
     # @cheerups_array = PartyPlanner.new(params[:reason_ids]).invite_cheerups
 
     respond_to do |format|
-        format.json { render json: {:cheerups_response => PartyPlanner.new(params[:reason_ids]).invite_cheerups} }
+        format.json { render :json => {:cheerups_response => PartyPlanner.new(params[:reason_ids]).invite_cheerups} }
     end
 
   end
